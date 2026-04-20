@@ -9,6 +9,24 @@
 </head>
 <body class="theme-dark">
 
+  <!-- Title Bar -->
+  <header class="titlebar">
+    <span class="titlebar-title">Calculator</span>
+    <div class="titlebar-controls">
+      <button class="tb-btn tb-min" id="tbMin" title="최소화">
+        <svg width="10" height="2" viewBox="0 0 10 2"><rect width="10" height="1.5" rx="0.75" fill="currentColor"/></svg>
+      </button>
+      <button class="tb-btn tb-max" id="tbMax" title="최대화">
+        <svg width="10" height="10" viewBox="0 0 10 10"><rect x="0.75" y="0.75" width="8.5" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      </button>
+      <button class="tb-btn tb-close" id="tbClose" title="닫기">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-content">
+
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-header">
@@ -104,6 +122,8 @@
       <li class="history-empty" id="historyEmpty">계산 결과가 여기에 표시됩니다</li>
     </ul>
   </aside>
+
+  </div><!-- /.app-content -->
 
   <script src="renderer.js"></script>
 </body>

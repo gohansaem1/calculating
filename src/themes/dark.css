@@ -26,4 +26,8 @@
   --history-result-color: #ff9500;
   --history-clear-bg: rgba(255,255,255,0.1);
   --history-clear-color: #aaaaaa;
+  --titlebar-bg: #111111;
+  --titlebar-border: rgba(255,255,255,0.06);
+  --titlebar-color: #ffffff;
+  --titlebar-btn-hover: rgba(255,255,255,0.1);
 }

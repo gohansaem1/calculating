@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 
 function createWindow() {
@@ -18,6 +18,10 @@ function createWindow() {
   })
 
   win.loadFile(path.join(__dirname, 'index.html'))
+
+  ipcMain.on('window-minimize', () => win.minimize())
+  ipcMain.on('window-maximize', () => win.isMaximized() ? win.unmaximize() : win.maximize())
+  ipcMain.on('window-close', () => win.close())
 }
 
 app.whenReady().then(createWindow)

@@ -1,5 +1,11 @@
 'use strict'
 
+// ── Window controls ─────────────────────────────────────────────
+const { ipcRenderer } = require('electron')
+document.getElementById('tbMin').addEventListener('click', () => ipcRenderer.send('window-minimize'))
+document.getElementById('tbMax').addEventListener('click', () => ipcRenderer.send('window-maximize'))
+document.getElementById('tbClose').addEventListener('click', () => ipcRenderer.send('window-close'))
+
 // ── Theme switcher ──────────────────────────────────────────────
 const themes = ['dark', 'light', 'midnight', 'neon', 'sunset']
 let currentTheme = 'dark'

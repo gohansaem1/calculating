@@ -26,4 +26,8 @@
   --history-result-color: #0a7aff;
   --history-clear-bg: rgba(0,0,0,0.08);
   --history-clear-color: #555555;
+  --titlebar-bg: #e0e0e5;
+  --titlebar-border: rgba(0,0,0,0.1);
+  --titlebar-color: #1c1c1e;
+  --titlebar-btn-hover: rgba(0,0,0,0.08);
 }
