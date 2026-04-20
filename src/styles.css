@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: -apple-system, 'SF Pro Display', 'Inter', sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  transition: background 0.35s ease;
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px 20px;
+  gap: 4px;
+  border-right: 1px solid var(--sidebar-border);
+  background: var(--sidebar-bg);
+  transition: background 0.35s ease, border-color 0.35s ease;
+  -webkit-app-region: no-drag;
+}
+
+.sidebar-header {
+  padding: 32px 8px 16px;
+}
+
+.sidebar-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sidebar-label);
+  opacity: 0.5;
+}
+
+.theme-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.theme-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+  -webkit-app-region: no-drag;
+}
+
+.theme-item:hover {
+  background: var(--sidebar-hover);
+}
+
+.theme-item.active {
+  background: var(--sidebar-active);
+}
+
+.theme-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.theme-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sidebar-text);
+  flex: 1;
+}
+
+.theme-sub {
+  font-size: 11px;
+  color: var(--sidebar-sub);
+  opacity: 0.6;
+}
+
+/* ── Calculator wrapper ── */
+.calculator-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--app-bg);
+  transition: background 0.35s ease;
+  -webkit-app-region: no-drag;
+}
+
+/* ── Card ── */
+.calc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 28px;
+  background: var(--card-bg);
+  box-shadow: 0 32px 80px var(--card-shadow);
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ── Display ── */
+.calc-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 20px 24px;
+  border-radius: 20px;
+  background: var(--display-bg);
+  height: 140px;
+  transition: background 0.35s ease;
+}
+
+.display-expression {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--display-expr-color);
+  min-height: 20px;
+  transition: color 0.35s ease;
+  letter-spacing: 0.02em;
+}
+
+.display-value {
+  font-size: 64px;
+  font-weight: 300;
+  color: var(--display-value-color);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 320px;
+  transition: color 0.35s ease;
+}
+
+/* ── Button Grid ── */
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(5, 80px);
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 40px;
+  font-size: 26px;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease, filter 0.2s ease;
+  -webkit-app-region: no-drag;
+}
+
+.btn:active {
+  transform: scale(0.93);
+  filter: brightness(0.85);
+}
+
+.btn-wide {
+  grid-column: span 2;
+  border-radius: 40px;
+}
+
+.btn-special {
+  background: var(--btn-special-bg);
+  color: var(--btn-special-color);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.btn-number {
+  background: var(--btn-number-bg);
+  color: var(--btn-number-color);
+}
+
+.btn-operator {
+  background: var(--btn-operator-bg);
+  color: var(--btn-operator-color);
+  font-size: 30px;
+}
+
+.btn-operator.active-op {
+  filter: brightness(1.3);
+  outline: 2px solid var(--btn-operator-bg);
+  outline-offset: 2px;
+}
+
+/* ── History Panel ── */
+.history-panel {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--history-border);
+  background: var(--history-bg);
+  transition: background 0.35s ease, border-color 0.35s ease;
+  -webkit-app-region: no-drag;
+  overflow: hidden;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 52px 16px 12px;
+  flex-shrink: 0;
+}
+
+.history-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--history-title);
+  opacity: 0.5;
+}
+
+.history-clear-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--history-clear-bg);
+  color: var(--history-clear-color);
+  transition: background 0.2s, opacity 0.2s;
+  -webkit-app-region: no-drag;
+}
+
+.history-clear-btn:hover {
+  opacity: 0.8;
+}
+
+.history-clear-btn:active {
+  transform: scale(0.95);
+}
+
+.history-list {
+  flex: 1;
+  overflow-y: auto;
+  list-style: none;
+  padding: 4px 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--history-border) transparent;
+}
+
+.history-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: var(--history-border);
+  border-radius: 2px;
+}
+
+.history-empty {
+  text-align: center;
+  font-size: 12px;
+  color: var(--history-title);
+  opacity: 0.35;
+  padding: 32px 16px;
+  line-height: 1.6;
+}
+
+.history-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--history-entry-bg);
+  cursor: default;
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.history-expr {
+  font-size: 11px;
+  color: var(--history-expr-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-result {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--history-result-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Theme transition ── */
+body,
+.sidebar,
+.calc-card,
+.calc-display,
+.btn,
+.theme-item,
+.display-value,
+.display-expression {
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}

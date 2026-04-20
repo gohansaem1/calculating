@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="themes/dark.css" />
+</head>
+<body class="theme-dark">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Themes</span>
+    </div>
+    <nav class="theme-list">
+      <button class="theme-item active" data-theme="dark">
+        <span class="theme-dot" style="background:#FF9500"></span>
+        <span class="theme-name">Dark</span>
+        <span class="theme-sub">Orange</span>
+      </button>
+      <button class="theme-item" data-theme="light">
+        <span class="theme-dot" style="background:#0A7AFF"></span>
+        <span class="theme-name">Light</span>
+        <span class="theme-sub">Blue</span>
+      </button>
+      <button class="theme-item" data-theme="midnight">
+        <span class="theme-dot" style="background:#00C6FF"></span>
+        <span class="theme-name">Midnight</span>
+        <span class="theme-sub">Cyan</span>
+      </button>
+      <button class="theme-item" data-theme="neon">
+        <span class="theme-dot" style="background:#39FF14"></span>
+        <span class="theme-name">Neon</span>
+        <span class="theme-sub">Green</span>
+      </button>
+      <button class="theme-item" data-theme="sunset">
+        <span class="theme-dot" style="background:#FF375F"></span>
+        <span class="theme-name">Sunset</span>
+        <span class="theme-sub">Pink</span>
+      </button>
+    </nav>
+  </aside>
+
+  <!-- Calculator -->
+  <main class="calculator-wrapper">
+    <div class="calc-card">
+
+      <!-- Display -->
+      <div class="calc-display">
+        <div class="display-expression" id="expression"></div>
+        <div class="display-value" id="display">0</div>
+      </div>
+
+      <!-- Button Grid -->
+      <div class="calc-grid">
+
+        <!-- Row 1 -->
+        <button class="btn btn-special" data-action="clear">C</button>
+        <button class="btn btn-special" data-action="sign">+/−</button>
+        <button class="btn btn-special" data-action="percent">%</button>
+        <button class="btn btn-operator" data-action="operator" data-value="÷">÷</button>
+
+        <!-- Row 2 -->
+        <button class="btn btn-number" data-action="number" data-value="7">7</button>
+        <button class="btn btn-number" data-action="number" data-value="8">8</button>
+        <button class="btn btn-number" data-action="number" data-value="9">9</button>
+        <button class="btn btn-operator" data-action="operator" data-value="×">×</button>
+
+        <!-- Row 3 -->
+        <button class="btn btn-number" data-action="number" data-value="4">4</button>
+        <button class="btn btn-number" data-action="number" data-value="5">5</button>
+        <button class="btn btn-number" data-action="number" data-value="6">6</button>
+        <button class="btn btn-operator" data-action="operator" data-value="−">−</button>
+
+        <!-- Row 4 -->
+        <button class="btn btn-number" data-action="number" data-value="1">1</button>
+        <button class="btn btn-number" data-action="number" data-value="2">2</button>
+        <button class="btn btn-number" data-action="number" data-value="3">3</button>
+        <button class="btn btn-operator" data-action="operator" data-value="+">+</button>
+
+        <!-- Row 5 -->
+        <button class="btn btn-number btn-wide" data-action="number" data-value="0">0</button>
+        <button class="btn btn-number" data-action="dot">.</button>
+        <button class="btn btn-operator" data-action="equals">=</button>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- History Panel -->
+  <aside class="history-panel">
+    <div class="history-header">
+      <span class="history-title">History</span>
+      <button class="history-clear-btn" id="clearHistory" title="기록 지우기">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 2L12 12M12 2L2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        Clear
+      </button>
+    </div>
+    <ul class="history-list" id="historyList">
+      <li class="history-empty" id="historyEmpty">계산 결과가 여기에 표시됩니다</li>
+    </ul>
+  </aside>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

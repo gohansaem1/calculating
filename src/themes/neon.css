@@ -1,0 +1,29 @@
+.theme-neon {
+  --app-bg: #050505;
+  --sidebar-bg: #080808;
+  --sidebar-border: rgba(57,255,20,0.1);
+  --sidebar-label: #39ff14;
+  --sidebar-text: #cccccc;
+  --sidebar-sub: #888888;
+  --sidebar-hover: rgba(57,255,20,0.05);
+  --sidebar-active: rgba(57,255,20,0.1);
+  --card-bg: #101010;
+  --card-shadow: rgba(57,255,20,0.08);
+  --display-bg: #0a0a0a;
+  --display-expr-color: #555555;
+  --display-value-color: #ffffff;
+  --btn-special-bg: #1c1c1c;
+  --btn-special-color: #888888;
+  --btn-number-bg: #161616;
+  --btn-number-color: #ffffff;
+  --btn-operator-bg: #39ff14;
+  --btn-operator-color: #050505;
+  --history-bg: #080808;
+  --history-border: rgba(57,255,20,0.1);
+  --history-title: #39ff14;
+  --history-entry-bg: rgba(57,255,20,0.04);
+  --history-expr-color: #555555;
+  --history-result-color: #39ff14;
+  --history-clear-bg: rgba(57,255,20,0.1);
+  --history-clear-color: #39ff14;
+}

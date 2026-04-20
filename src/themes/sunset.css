@@ -1,0 +1,29 @@
+.theme-sunset {
+  --app-bg: #1a0808;
+  --sidebar-bg: #200a0a;
+  --sidebar-border: rgba(255,55,95,0.12);
+  --sidebar-label: #ff375f;
+  --sidebar-text: #ffcccc;
+  --sidebar-sub: #ff8080;
+  --sidebar-hover: rgba(255,55,95,0.08);
+  --sidebar-active: rgba(255,55,95,0.15);
+  --card-bg: #2d1010;
+  --card-shadow: rgba(255,55,95,0.15);
+  --display-bg: #210b0b;
+  --display-expr-color: #ff8080;
+  --display-value-color: #ffffff;
+  --btn-special-bg: #5c3030;
+  --btn-special-color: #ffaaaa;
+  --btn-number-bg: #3a1818;
+  --btn-number-color: #ffffff;
+  --btn-operator-bg: #ff375f;
+  --btn-operator-color: #ffffff;
+  --history-bg: #200a0a;
+  --history-border: rgba(255,55,95,0.12);
+  --history-title: #ff375f;
+  --history-entry-bg: rgba(255,55,95,0.06);
+  --history-expr-color: #ff8080;
+  --history-result-color: #ff375f;
+  --history-clear-bg: rgba(255,55,95,0.15);
+  --history-clear-color: #ffaaaa;
+}
